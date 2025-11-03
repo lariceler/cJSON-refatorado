@@ -3,10 +3,10 @@
 Refatoração com foco em **segurança, legibilidade e manutenibilidade**.
 
 // Mudanças principais:
-- Substituição de `sprintf` → `snprintf` (prevenção de overflow)
-- Criação da função comum `format_number()` (remove duplicação)
-- `parse_value()` decomposta em helpers (`parse_*_value`)
-- Adição de docstrings Doxygen nas APIs públicas
+ Substituição de `sprintf` → `snprintf` (prevenção de overflow)
+ Criação da função comum `format_number()` (remove duplicação)
+ `parse_value()` decomposta em helpers (`parse_*_value`)
+ Adição de docstrings Doxygen nas APIs públicas
 
   Métricas (Antes × Depois)
 | Métrica | Antes | Depois |

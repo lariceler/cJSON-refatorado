@@ -1,5 +1,5 @@
 /* cJSON.c — versão refatorada para a atividade de Qualidade de Software
- * Mudanças:
+ * Mudanças aplicadas:
  * - sprintf → snprintf (segurança contra overflow)
  * - função comum format_number() (remove duplicação)
  * - parse_value() decomposta em helpers para reduzir complexidade
@@ -37,10 +37,10 @@ static cJSON* parse_literal_value(parse_buffer *buffer){ return parse_literal(bu
 static cJSON* parse_value(parse_buffer *buffer)
 {
     skip_whitespace(buffer);
-    if (buffer_at_string(buffer))      return parse_string_value(buffer);
-    if (buffer_at_number(buffer))      return parse_number_value(buffer);
-    if (buffer_at_array(buffer))       return parse_array_value(buffer);
-    if (buffer_at_object(buffer))      return parse_object_value(buffer);
-    if (buffer_at_bool_or_null(buffer))return parse_literal_value(buffer);
+    if (buffer_at_string(buffer))       return parse_string_value(buffer);
+    if (buffer_at_number(buffer))       return parse_number_value(buffer);
+    if (buffer_at_array(buffer))        return parse_array_value(buffer);
+    if (buffer_at_object(buffer))       return parse_object_value(buffer);
+    if (buffer_at_bool_or_null(buffer)) return parse_literal_value(buffer);
     return NULL;
 }

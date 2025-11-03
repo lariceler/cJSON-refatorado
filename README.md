@@ -4,12 +4,13 @@ Refatoração com foco em **segurança**, **legibilidade** e **manutenibilidade*
 
 ## Projeto original
 - Repositório: https://github.com/DaveGamble/cJSON
+- Observação: este repositório contém apenas os arquivos alterados (cJSON.c e cJSON.h), conforme instruções da atividade de refatoração. O projeto original completo está disponível no link acima.
 
 ## O que foi refatorado
-- Substituição de `sprintf` → `snprintf` (prevenção de overflow);
-- Criação da função comum `format_number()` (remove duplicação de formatação numérica);
-- `parse_value()` decomposta em helpers (`parse_*_value`) para reduzir complexidade ciclomática;
-- Docstrings no padrão Doxygen nas APIs públicas (`cJSON_Print`, `cJSON_Parse`, `cJSON_Delete`).
+- Substituição de `sprintf` → `snprintf` (prevenção de overflow)
+- Criação da função comum `format_number()` (remove duplicação)
+- `parse_value()` decomposta em helpers (`parse_*_value`) para reduzir complexidade
+- Adição de docstrings Doxygen nas APIs públicas (`cJSON_Print`, `cJSON_Parse`, `cJSON_Delete`)
 
 ## Métricas (Antes × Depois)
 - Complexidade média: **4.2 → 3.5**
@@ -17,15 +18,8 @@ Refatoração com foco em **segurança**, **legibilidade** e **manutenibilidade*
 - Dívida técnica: **3h40 → 2h10**
 - Código duplicado: **4.5% → 1.8%**
 
-## Como avaliar localmente (exemplo)
+## Como avaliar localmente
 ```bash
-# análise estática
 cppcheck --enable=all .
-
-# complexidade
 lizard cJSON.c
-
-# testes/cobertura (ajuste conforme seu ambiente)
 make test
-
-Este repositório publica apenas os arquivos alterados para a atividade de refatoração (conforme enunciado). O projeto original completo está em https://github.com/DaveGamble/cJSON.

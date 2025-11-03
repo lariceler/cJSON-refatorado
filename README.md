@@ -27,3 +27,7 @@ lizard cJSON.c
 
 # testes/cobertura (ajuste conforme seu ambiente)
 make test
+
+
+
+Este repositório publica apenas os arquivos alterados para a atividade de refatoração (conforme enunciado). O projeto original completo está em https://github.com/DaveGamble/cJSON.”
